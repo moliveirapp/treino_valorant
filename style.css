@@ -13,6 +13,11 @@ body {
   margin: 20px;
 }
 
+.settings {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
 button {
   margin: 5px;
   padding: 10px 15px;
@@ -29,8 +34,8 @@ button:hover {
 
 .game-area {
   position: relative;
-  width: 600px;
-  height: 400px;
+  width: 800px; /* Área de interação maior */
+  height: 600px;
   background-color: #222;
   border: 2px solid #fff;
   margin-top: 20px;

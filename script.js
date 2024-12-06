@@ -1,10 +1,13 @@
 const gameArea = document.getElementById("gameArea");
 const scoreDisplay = document.getElementById("score");
 const startButton = document.getElementById("startGame");
+const speedDisplay = document.getElementById("speedDisplay");
+const sizeDisplay = document.getElementById("sizeDisplay");
+const targetsDisplay = document.getElementById("targetsDisplay");
 
 let speed = 1000; // Intervalo entre aparições (ms)
 let size = 50; // Tamanho dos pontos
-let maxTargets = 10; // Número de aparições
+let maxTargets = 30; // Número de aparições
 let hits = 0;
 let misses = 0;
 let currentTargets = 0;
@@ -12,6 +15,24 @@ let interval;
 
 function updateScore() {
   scoreDisplay.textContent = `Acertos: ${hits} | Erros: ${misses}`;
+}
+
+function updateSettings() {
+  // Exibe a velocidade como nível (1 a 10)
+  const speedLevel = Math.min(10, Math.max(1, 11 - speed / 200));
+  speedDisplay.textContent = speedLevel;
+
+  // Exibe o tamanho como "Pequeno", "Médio" ou "Grande"
+  if (size <= 30) {
+    sizeDisplay.textContent = "Pequeno";
+  } else if (size <= 70) {
+    sizeDisplay.textContent = "Médio";
+  } else {
+    sizeDisplay.textContent = "Grande";
+  }
+
+  // Exibe a quantidade de acertos configurada
+  targetsDisplay.textContent = maxTargets;
 }
 
 function createPoint(color) {
@@ -56,33 +77,27 @@ function startGame() {
 
 function adjustSpeed(amount) {
   speed = Math.max(200, speed + amount);
+  updateSettings();
 }
 
 function adjustSize(amount) {
   size = Math.max(10, size + amount);
+  updateSettings();
 }
 
 function adjustTargets(amount) {
   maxTargets = Math.max(1, maxTargets + amount);
+  updateSettings();
 }
 
 // Botões de controle
-document
-  .getElementById("increaseSpeed")
-  .addEventListener("click", () => adjustSpeed(-200));
-document
-  .getElementById("decreaseSpeed")
-  .addEventListener("click", () => adjustSpeed(200));
-document
-  .getElementById("increaseSize")
-  .addEventListener("click", () => adjustSize(10));
-document
-  .getElementById("decreaseSize")
-  .addEventListener("click", () => adjustSize(-10));
-document
-  .getElementById("increaseTargets")
-  .addEventListener("click", () => adjustTargets(5));
-document
-  .getElementById("decreaseTargets")
-  .addEventListener("click", () => adjustTargets(-5));
+document.getElementById("increaseSpeed").addEventListener("click", () => adjustSpeed(-200));
+document.getElementById("decreaseSpeed").addEventListener("click", () => adjustSpeed(200));
+document.getElementById("increaseSize").addEventListener("click", () => adjustSize(10));
+document.getElementById("decreaseSize").addEventListener("click", () => adjustSize(-10));
+document.getElementById("increaseTargets").addEventListener("click", () => adjustTargets(5));
+document.getElementById("decreaseTargets").addEventListener("click", () => adjustTargets(-5));
 startButton.addEventListener("click", startGame);
+
+// Atualiza as configurações iniciais
+updateSettings();
