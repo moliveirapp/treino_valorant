@@ -1,0 +1,51 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+  background-color: #121212;
+  color: #fff;
+}
+
+.controls {
+  margin: 20px;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.game-area {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  background-color: #222;
+  border: 2px solid #fff;
+  margin-top: 20px;
+}
+
+.point {
+  position: absolute;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.point.green {
+  background-color: green;
+}
+
+.point.red {
+  background-color: red;
+}
