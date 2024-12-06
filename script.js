@@ -11,7 +11,10 @@ let targetCount = 30; // Quantidade de alvos
 let hits = 0;
 let misses = 0;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> d692867d4ecce4c269a21e891d8494cb41a084b9
 const sizes = ["Minúsculo", "Muito Pequeno", "Pequeno", "Médio", "Grande"];
 const sizeValues = [10, 20, 30, 40, 50]; // Tamanhos dos alvos em pixels
 const speedIntervals = [2000, 1500, 1200, 1000, 800, 600, 500, 400, 300, 200]; // Intervalos em ms para cada velocidade (1 a 10)
