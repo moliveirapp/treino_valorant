@@ -16,6 +16,7 @@ body {
 .settings {
   margin-top: 10px;
   font-size: 18px;
+  text-align: center; /* Centraliza as configurações */
 }
 
 button {
@@ -38,7 +39,7 @@ button:hover {
   height: 600px;
   background-color: #222;
   border: 2px solid #fff;
-  margin-top: 20px;
+  margin-top: 20px auto;
 }
 
 .point {
