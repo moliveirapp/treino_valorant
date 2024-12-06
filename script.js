@@ -11,6 +11,7 @@ let targetCount = 30; // Quantidade de alvos
 let hits = 0;
 let misses = 0;
 
+
 <<<<<<< HEAD
 
 =======
